@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @vessel.owner_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @vessel.name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @vessel.location %>
+</p>
+
+<p>
+  <strong>Berths:</strong>
+  <%= @vessel.berths %>
+</p>
+
+<%= link_to 'Edit', edit_vessel_path(@vessel) %> |
+<%= link_to 'Back', vessels_path %>
