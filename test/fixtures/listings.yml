@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vessel: one
+  price: 
+  avail_start: 2021-06-11 12:24:18
+  description: MyText
+
+two:
+  vessel: two
+  price: 
+  avail_start: 2021-06-11 12:24:18
+  description: MyText
