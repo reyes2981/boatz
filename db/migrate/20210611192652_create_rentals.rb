@@ -5,7 +5,7 @@ class CreateRentals < ActiveRecord::Migration[6.1]
       t.references :listing, null: false, foreign_key: true
       t.datetime :start_time
       t.datetime :end_time
-      t.int :num_guests
+      t.integer :num_guests
 
       t.timestamps
     end
