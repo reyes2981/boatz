@@ -10,6 +10,11 @@ function Signup() {
         e.preventDefault()
         history.push('/listings')
     }
+
+    function handleBack() {
+        history.push('/')
+    }
+    
     return (
         <div>
             <h1>Create an Account</h1>
@@ -31,6 +36,8 @@ function Signup() {
                     value='create account'
                 />
             </form>
+            <button onClick={handleBack}>back</button>
+
             </div>
     )
 }
