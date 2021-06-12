@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'welcome#index'
-
+  get '/login' => 'welcome#index'
   resources :listings do
     resources :rentals, shallow: true
   end
