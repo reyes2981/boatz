@@ -64,6 +64,6 @@ class VesselsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def vessel_params
-      params.require(:vessel).permit(:owner_id, :name, :location, :berths)
+      params.require(:vessel).permit(:owner_id, :name, :location, :berths, images:[])
     end
 end
