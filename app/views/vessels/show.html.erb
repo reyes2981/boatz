@@ -20,5 +20,18 @@
   <%= @vessel.berths %>
 </p>
 
+<% if @vessel.images.any? %>
+   <h3>Attachments:</h3>
+   <% @vessel.images.each do |image| %>
+     <% if image.variable? %>
+       <%= image_tag image.variant(resize: "400x400") %>
+     <% elsif image.previewable? %>
+       <%= image_tag image.preview(resize: "400x400"), rails_blob_path(image, disposition: :attachment) %>
+     <% else %>
+       <%= link_to image.filename, rails_blob_path(image, disposition: :attachment) %>
+     <% end %>
+   <% end %>
+ <% end %>
+
 <%= link_to 'Edit', edit_vessel_path(@vessel) %> |
 <%= link_to 'Back', vessels_path %>
