@@ -31,6 +31,20 @@
     <%= form.text_field :berths %>
   </div>
 
+  <div class="field">
+   <%= form.label :images %>
+   <%= form.file_field :images, multiple: true %>
+ </div>
+  <strong>Attachments:</strong>
+ <ul>
+ <% vessel.images.each do |image| %>
+   <li>
+     <%= link_to image.filename, rails_blob_path(image, disposition: :attachment) %>
+     <%= link_to 'Remove', delete_file_vessel_url(image.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+   </li>
+ <% end %>
+ </ul>
+
   <div class="actions">
     <%= form.submit %>
   </div>
