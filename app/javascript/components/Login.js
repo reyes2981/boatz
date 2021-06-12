@@ -12,6 +12,10 @@ function Login() {
         history.push('/listings')
     }
 
+    function handleBack() {
+        history.push('/')
+    }
+
     return (
         <div> 
             <h1>Login</h1>
@@ -33,6 +37,7 @@ function Login() {
                     value='login'
                 />
             </form>
+            <button onClick={handleBack}>back</button>
 
         </div>
     )
