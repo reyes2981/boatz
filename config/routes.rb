@@ -11,7 +11,11 @@ Rails.application.routes.draw do
       resources :listings, shallow: true
     end
   end
-  resources :vessels
+  resources :vessels do
+    member do
+      delete :delete_file
+    end
+  end
   resources :rentals
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
