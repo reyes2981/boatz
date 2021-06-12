@@ -8,10 +8,13 @@ function Header() {
             <NavLink to='/login'>
                 <li>login</li>
             </NavLink>
+            <NavLink to='/signup'>
+                <li>create an account</li>
+            </NavLink>
             <NavLink to='/'>
                 <li>my rentals</li>
             </NavLink>
-            <NavLink to='/'>
+            <NavLink to='/rentals/new'>
                 <li>rent my boat</li>
             </NavLink>
         </div>
