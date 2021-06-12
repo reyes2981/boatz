@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function vessel(boat) {
+export default function Vessel(boat) {
     return (
         <div>
             Description: {boat.description}

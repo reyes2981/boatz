@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function vessel_container() {
+export default function Vessel_container() {
     const boats = fetch("http://localhost:3000/vessels")  
         .then (resp => resp.json())
         .then(vesselObject => listVessel(vesselObject))
