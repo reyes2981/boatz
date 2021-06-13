@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './Header'
 import Login from './Login'
 import Signup from './Signup'
+import Vessel_list from './Vessel_list'
 
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
@@ -25,6 +26,7 @@ export default function App() {
 					</Route>
 				</Switch>
 			</Router>
+			<Vessel_list />
 		</div>
 	)
 }
