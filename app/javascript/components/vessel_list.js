@@ -2,18 +2,19 @@ import React from 'react'
 import Vessel from './Vessel'
 
 export default function Vessel_list() {
-    // const vessels = boats.map((boat) => {
-    //     return <Vessel key={boat.id} boat={boat}/>
-    // })
+    const vessels = boats.map((boat) => {
+        return <Vessel key={boat.id} boat={boat}/>
+    })
 
     function addNewVessel() {
         const vesselObj = {
-            description: vessel.description,
-            price: vessel.price,
-            availability: vessel.availability
+            owner: vessel.owner,
+            name: vessel.name,
+            location: vessel.location,
+            berths: vessel.berths
         }
 
-        fetch(`http://localhost:3000/owners/{owner.id}/vessels`, {
+        fetch(`http://localhost:3000/owners/${owner.id}/vessels`, {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(vesselObj)
@@ -26,7 +27,7 @@ export default function Vessel_list() {
 
     return (
         <div>
-            This is where the vessel list goes
+            {vessels}
             <button onClick={() => addNewVessel()}>New vessel</button>
         </div>
     )
