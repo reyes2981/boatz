@@ -5,7 +5,6 @@ import axios from 'axios'
 function Signup() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [isOwner, selectOwner] = useState(false)
     const history = useHistory()
 
     function handleSubmit(e) {
@@ -47,12 +46,6 @@ function Signup() {
                     placeholder='password'
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                />
-                <input
-                    type='checkbox'
-                    placeholder='Boat Owner'
-                    value={isOwner}
-                    onChange={(e) => selectOwner(!e.target.value)}
                 />
                 <input 
                     type='submit'

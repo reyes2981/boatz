@@ -1,12 +1,20 @@
 import React from 'react'
 
-export default function Vessel(boat) {
+export default function Vessel({name, location, berths}) {
     return (
+      <div>
         <div>
-            Description: {boat.description}
-            Price: {boat.price}
-            Availability: {boat.availability}
-            <button></button>
+            Name: {name} 
         </div>
+        <div>
+            Location: {location}
+        </div>
+        <div>
+            Berths: {berths} 
+        </div>
+        <div>
+            <a>Delete</a>
+        </div>
+      </div>
     )
 }

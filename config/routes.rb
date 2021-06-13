@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get :signup, to: 'welcome#index'
   get :login, to: 'welcome#index'
+  get :boatz, to: 'welcome#index'
   resources :listings do
     resources :rentals, shallow: true
   end
