@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 
 // extra field called images
-export const NewVesselForm = () => {
+export default function NewVesselForm({user}){
 
     const [ vesselName, setVesselName ] = useState('')
     const [ vesselLocation, setVesselLocation ] = useState('')
@@ -25,6 +26,15 @@ export const NewVesselForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
+        axios.post(`http://localhost:3000/owners/${user.id}/vessels.json`,{
+          name: vesselName,
+          location: vesselLocation,
+          berths: vesselBerth,
+          owner_id: user.id
+        },{withCredentials: true})
+        .then(response =>{
+          console.log(response)
+        })
         // onFormSubmit()
     }
 
