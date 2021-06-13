@@ -1,31 +1,39 @@
-import axios from 'axios'
-import React, {useState} from 'react'
+import React, {useState} from 'react' 
 import { useHistory } from "react-router-dom"
+import axios from 'axios'
 
-
-function Login({handleLogout, handleLogin}) {
+function JoinRenters() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const history = useHistory()
 
     function handleSubmit(e) {
         e.preventDefault()
-        axios.post('http://localhost:3000/sessions',{
-          user: {
+        axios.post('http://localhost:3000/renter_registrations', {
+          renter: {
             email: email,
             password: password
           }
-        }, { withCredentials: true})
-        history.push('/boatz')
+        },{
+          withCredentials: true
+        })
+        .then(response => {
+          if (response.data.status === 'created'){
+            history.push('/listings')
+          }
+        }).catch(error => {
+          console.log('error', error);
+        })
+        
     }
 
     function handleBack() {
         history.push('/')
     }
-
+    
     return (
-        <div> 
-            <h1>Login</h1>
+        <div>
+            <h1>Create an Account</h1>
             <form onSubmit={handleSubmit}>
                 <input
                     type='text'
@@ -41,14 +49,15 @@ function Login({handleLogout, handleLogin}) {
                 />
                 <input 
                     type='submit'
-                    value='login'
+                    value='create account'
                 />
             </form>
             <button onClick={handleBack}>back</button>
-            <button onClick={handleLogout}>logout</button>
 
-        </div>
+            </div>
     )
 }
 
-export default Login;
+export default JoinRenters
+
+
