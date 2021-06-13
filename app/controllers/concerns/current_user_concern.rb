@@ -8,10 +8,10 @@ module CurrentUserConcern
   def set_current_user
     if session[:owner_id]
       @current_user = Owner.find(session[:owner_id]) 
-      @current_user.owner = true
+      @owner = 'IS_OWNER'
     elsif session[:renter_id]
       @current_user = Owner.find(session[:renter_id])
-      @current_user.owner = false
+      @owner = 'NOT_OWNER'
     end
   end
 end

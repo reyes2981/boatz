@@ -1,4 +1,4 @@
-class OwnerRegistrationsController < ApplicationController
+class OwnerRegistrationController < ApplicationController
   def create
     owner = Owner.create!(email: params[:owner][:email],
                         password: params[:owner][:password])
@@ -6,7 +6,8 @@ class OwnerRegistrationsController < ApplicationController
       session[:owner_id] = owner.id
       render json: {
         status: :created,
-        owner: owner
+        user: owner,
+        owner: 'IS_OWNER'
       }, except: %i[password_digest created_at updated_at]
     else
       render json: { status: 422 }
