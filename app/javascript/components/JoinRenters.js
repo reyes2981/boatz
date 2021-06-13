@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { useHistory } from "react-router-dom"
 import axios from 'axios'
 
-function JoinRenters() {
+function JoinRenters({handleLogin}) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const history = useHistory()
@@ -19,6 +19,7 @@ function JoinRenters() {
         })
         .then(response => {
           if (response.data.status === 'created'){
+            handleLogin(response.data)
             history.push('/listings')
           }
         }).catch(error => {

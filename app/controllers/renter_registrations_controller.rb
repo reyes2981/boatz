@@ -1,4 +1,4 @@
-class RenterRegistrationController < ApplicationController
+class RenterRegistrationsController < ApplicationController
   def create
     renter = Renter.create!(email: params[:renter][:email],
                         password: params[:renter][:password], 

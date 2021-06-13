@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get :signup, to: 'welcome#index'
   get :login, to: 'welcome#index'
   get :boatz, to: 'welcome#index'
+  get :joinrenters, to: 'welcome#index'
   resources :listings do
     resources :rentals, shallow: true
   end

@@ -3,6 +3,7 @@ import Header from './Header'
 import Login from './Login'
 import Signup from './Signup'
 import BoatzContainer from './BoatzContainer'
+import JoinRenters from './JoinRenters'
 import axios from 'axios'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
@@ -81,7 +82,18 @@ handleLogout = () => {
               user={this.state.user}
             />
           )}>
-						
+					
+					</Route>
+          <Route exact path='/joinrenters' render={props => (
+            <JoinRenters {...props} 
+              handleLogin={this.handleLogin}
+              handleLogout={this.handleLogout}
+              loggedInStatus={this.loggedInStatus}
+              isOwner={this.state.owner}
+              user={this.state.user}
+            />
+          )}>
+					
 					</Route>
 					<Route exact path='/rentals/new'>
 						{/* <RentalForm /> */}
